@@ -1,3 +1,16 @@
+:root {
+  --background: linear-gradient(
+    90deg,
+    rgb(0, 211, 176) 0%,
+    rgb(0, 205, 231) 61%
+  );
+  --color: #40c5c5;
+  --dashboard-bg: linear-gradient(
+    0deg,
+    rgba(0, 205, 231, 1) 0%,
+    rgba(0, 210, 175, 1) 80%
+  );
+}
 .App {
   text-align: center;
 }
@@ -25,7 +38,11 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #40c5c5;
+}
+.btnStyle {
+  background: var(--background) !important;
+  border-radius: 0 !important;
 }
 
 @keyframes App-logo-spin {
