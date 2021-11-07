@@ -3,28 +3,34 @@ import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-// import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Button, Grid } from '@mui/material';
-import Calendar from "../../Shared/Calendar/Calendar"
-import Appointments from '../Appointments/Appointments';
+import { Button } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import DashboardHome from '../DashboardHome/DashboardHome';
+import {
+  Switch, Route, useRouteMatch
+} from "react-router-dom";
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AddDoctor from '../AddDoctor/AddDoctor';
+import { MdOutlineCalendarToday } from 'react-icons/md';
+import { CgMenuGridR } from 'react-icons/cg';
+import { MdSupervisorAccount } from 'react-icons/md';
+import { RiAdminLine } from 'react-icons/ri';
+import useAuth from '../../../hooks/useAuth';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+
 const drawerWidth = 240;
 
 function Dashboard(props) {
+  let { path, url } = useRouteMatch();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [date, setDate] = React.useState(new Date())
+  const { admin } = useAuth();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -35,22 +41,31 @@ function Dashboard(props) {
     textDecoration: "none",
     color: "white"
   }
+  const dashboardIconStyle = {
+    fontSize: "25px",
+    marginRight: "8px"
+  }
   const drawer = (
-    <div style={{ height: "100%", background: "var(--dashboard-bg)", color: "white" }}>
+    <div style={{ height: "100%", background: "var(--dashboard-bg)", color: "white", display: "flex", justifyContent: "center", alignItems: "center" }}>
       <Toolbar />
-      <NavLink style={style} activeStyle={activeStyle} to="/appointment">
-        <Button color="inherit">Appointment</Button>
-      </NavLink>
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Box sx={{ display: "flex", flexDirection: "column", alignItems: 'flex-start', ml: -6, mt: -40, justifyContent: "center" }}>
+        <NavLink style={style} activeStyle={activeStyle} to="/appointment">
+          <Button color="inherit"><MdOutlineCalendarToday style={dashboardIconStyle} /> Appointment</Button>
+        </NavLink>
+        <NavLink style={style} activeStyle={activeStyle} to={`${url}`}>
+          <Button color="inherit"><CgMenuGridR style={dashboardIconStyle} />Dashboard</Button>
+        </NavLink>
+        {admin &&
+          <NavLink style={style} activeStyle={activeStyle} to={`${url}/makeAdmin`}>
+            <Button color="inherit"><RiAdminLine style={dashboardIconStyle} /> Make Admin</Button>
+          </NavLink>
+        }
+        {admin &&
+          <NavLink style={style} activeStyle={activeStyle} to={`${url}/addDoctor`}>
+            <Button color="inherit"><MdSupervisorAccount style={dashboardIconStyle} /> Add Doctor</Button>
+          </NavLink>
+        }
+      </Box>
     </div>
   );
 
@@ -119,17 +134,17 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={12} lg={4}>
-            <Calendar
-              date={date}
-              setDate={setDate}
-            />
-          </Grid>
-          <Grid item xs={12} md={12} lg={6}>
-            <Appointments date={date}></Appointments>
-          </Grid>
-        </Grid>
+        <Switch>
+          <Route exact path={path}>
+            <DashboardHome date={date} setDate={setDate} />
+          </Route>
+          <AdminRoute path={`${path}/makeAdmin`}>
+            <MakeAdmin />
+          </AdminRoute>
+          <AdminRoute path={`${path}/addDoctor`}>
+            <AddDoctor />
+          </AdminRoute>
+        </Switch>
       </Box>
     </Box>
   );

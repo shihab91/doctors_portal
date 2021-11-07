@@ -10,13 +10,14 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 const Navigation = () => {
   const { user, logOutUser } = useAuth();
-  console.log(user);
   const activeStyle = {
     color: "#8AFFCC",
   }
   const style = {
     textDecoration: "none",
-    color: "white"
+    color: "white",
+    margin: ' 0 10px'
+
   }
   return (
     <Box sx={{ flexGrow: 1, mb: 4 }}>
@@ -45,6 +46,7 @@ const Navigation = () => {
               <NavLink style={style} activeStyle={activeStyle} to="/dashboard">
                 <Button color="inherit">Dashboard</Button>
               </NavLink>
+              <Button color="inherit" style={style}>{user?.displayName}</Button>
               <Button color="inherit" variant="contained" className="btnStyle" onClick={logOutUser}>Log Out</Button>
             </Box>
             :
