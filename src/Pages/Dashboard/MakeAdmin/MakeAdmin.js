@@ -1,5 +1,5 @@
 import { Alert, Button, TextField } from '@mui/material';
-import { Box, display } from '@mui/system';
+import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 
@@ -12,7 +12,7 @@ const MakeAdmin = () => {
   }
   const handleAdminSubmit = (e) => {
     const user = { email }
-    fetch("http://localhost:5000/users/admin", {
+    fetch("https://aqueous-garden-06025.herokuapp.com/users/admin", {
       method: "PUT",
       headers: {
         "authorization": `Bearer ${token}`,
@@ -23,7 +23,6 @@ const MakeAdmin = () => {
       .then(res => res.json())
       .then(data => {
         if (data.modifiedCount) {
-          console.log(data)
           setEmail("")
           setSuccess(true)
         }
@@ -33,7 +32,7 @@ const MakeAdmin = () => {
   return (
     <div>
       <h2>Make Admin</h2>
-      <Box sx={{ display: 'flex', justifyContent: "center", alignItems: 'center' }}>
+      <Box sx={{ display: 'flex', justifyContent: "center", alignItems: 'center', mt: 20 }}>
         <form style={{ display: 'flex', flexDirection: 'column', width: "25%" }} action="" onSubmit={handleAdminSubmit}>
           <TextField onBlur={handleOnBlur} type="email" label="Admin Email" variant="standard" />
           <Button className="btnStyle" variant="contained" type="submit" sx={{ mt: 3 }}>Make Admin</Button>

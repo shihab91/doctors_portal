@@ -10,7 +10,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 const SomeInfo = () => {
   return (
-    <Container sx={{ mt: -8 }}>
+    <Container sx={{ mt: -12 }}>
       <Grid container spacing={{ xs: 2, md: 3 }} style={{ margin: 0 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
         <Grid item xs={4} sm={4} md={4} sx={{ gap: 5, m: 0 }}>
           <Card sx={{

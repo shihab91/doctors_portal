@@ -20,7 +20,7 @@ const style = {
   p: 4,
 };
 const BookingModal = ({ setBookingSuccess, openBooking, handleBookingClose, booking, date }) => {
-  const { name, time } = booking;
+  const { name, time, price } = booking;
   const { user } = useAuth();
   const initialInfo = { patientName: user.displayName, email: user.email, phone: "" }
   const [bookingInfo, setBookingInfo] = useState(initialInfo);
@@ -36,10 +36,11 @@ const BookingModal = ({ setBookingSuccess, openBooking, handleBookingClose, book
     const appointment = {
       ...bookingInfo,
       time,
+      price,
       serviceName: name,
       date: date.toLocaleDateString()
     }
-    fetch("http://localhost:5000/appointments", {
+    fetch("https://aqueous-garden-06025.herokuapp.com/appointments", {
       method: "POST",
       headers: {
         "content-type": "application/json"

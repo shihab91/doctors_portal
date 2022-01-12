@@ -39,7 +39,7 @@ const ContactUs = () => {
           <TextField
             id="outlined-multiline-static"
             multiline
-            rows={4}
+            rows={8}
             placeholder="Your Message*"
             style={contact}
           />
@@ -47,7 +47,7 @@ const ContactUs = () => {
 
         </form>
       </Container>
-    </Box >
+    </Box>
   );
 };
 

@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import useAuth from '../../../hooks/useAuth';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import React, { useEffect, useState } from "react";
+import useAuth from "../../../hooks/useAuth";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 const Appointments = ({ date }) => {
   const { user, token } = useAuth();
   const [appointments, setAppointments] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/appointments?email=${user.email}&&date=${date}`
+    const url = `https://aqueous-garden-06025.herokuapp.com/appointments?email=${user.email
+      }&&date=${date.toLocaleDateString()}`;
     fetch(url, {
       headers: {
-        "authorization": `Bearer ${token}`
-      }
+        authorization: `Bearer ${token}`,
+      },
     })
-      .then(res => res.json())
-      .then(data => setAppointments(data))
-  }, [date])
+      .then((res) => res.json())
+      .then((data) => setAppointments(data));
+  }, [date, user.email, token]);
   return (
     <div>
       <h2>Appointments {appointments.length} </h2>
@@ -34,15 +35,17 @@ const Appointments = ({ date }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {appointments.map((row) => (
+            {appointments.map((appointment) => (
               <TableRow
-                key={row._id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                key={appointment._id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row"> {row.patientName} </TableCell>
-                <TableCell align="left">{row.time}</TableCell>
-                <TableCell align="left">{row.serviceName}</TableCell>
-                <TableCell align="right">{row.fat}</TableCell>
+                <TableCell component="th" scope="row">
+                  {" "}
+                  {appointment.patientName}{" "}
+                </TableCell>
+                <TableCell align="left">{appointment.time}</TableCell>
+                <TableCell align="left">{appointment.serviceName}</TableCell>
               </TableRow>
             ))}
           </TableBody>

@@ -6,10 +6,10 @@ import { Button, Container, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 const Banner = () => {
   const bannerBg = {
-    background: `url(${bg})`
+    background: `  linear-gradient(90deg,transparent 75%,rgb(58,65,85)25%),url(${bg})`
   }
   return (
-    <Box style={bannerBg} sx={{ height: 600, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <Box style={bannerBg} sx={{ height: 700, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <Container sx={{ flexGrow: 1 }} >
         <Grid container spacing={2} sx={{ my: "auto" }}>
           <Grid item xs={12} md={6} sx={{ textAlign: 'left' }}>
