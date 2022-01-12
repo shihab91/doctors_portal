@@ -10,12 +10,18 @@ import Exceptional from '../Exceptional/Exceptional';
 import Services from '../Services/Services';
 import SomeInfo from '../SomeInfo/SomeInfo';
 import Testimonial from '../Testimonial/Testimonial';
+import bg from "../../../images/bg.png";
 import "./Home.css";
 const Home = () => {
+  const bannerBg = {
+    background: `  linear-gradient(90deg,transparent 75%,rgb(58,65,85)25%),url(${bg})`,
+  };
   return (
     <div>
-      <Navigation></Navigation>
-      <Banner></Banner>
+      <div style={bannerBg}>
+        <Navigation></Navigation>
+        <Banner></Banner>
+      </div>
       <SomeInfo></SomeInfo>
       <Services></Services>
       <Exceptional></Exceptional>

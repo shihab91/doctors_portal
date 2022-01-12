@@ -1,25 +1,48 @@
 import React from 'react';
 import chair from "../../../images/chair.png";
-import bg from "../../../images/bg.png";
-import Grid from '@mui/material/Grid';
-import { Button, Container, Typography } from '@mui/material';
-import { Box } from '@mui/system';
+import Grid from "@mui/material/Grid";
+import { Button, Container, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 const Banner = () => {
-  const bannerBg = {
-    background: `  linear-gradient(90deg,transparent 75%,rgb(58,65,85)25%),url(${bg})`
-  }
   return (
-    <Box style={bannerBg} sx={{ height: 700, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <Container sx={{ flexGrow: 1 }} >
+    <Box
+      sx={{
+        height: 700,
+        pb: 10,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Container sx={{ flexGrow: 1 }}>
         <Grid container spacing={2} sx={{ my: "auto" }}>
-          <Grid item xs={12} md={6} sx={{ textAlign: 'left' }}>
-            <Typography variant="h3" sx={{ mb: 4 }}>
+          <Grid item xs={12} md={6} sx={{ textAlign: "left" }}>
+            <Typography
+              variant="h3"
+              sx={{
+                mb: 4,
+                fontFamily: "var(--montserrat-font)",
+                fontWeight: 700,
+              }}
+            >
               Your New Smile <br /> Starts Here
             </Typography>
-            <Typography variant="p">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores iusto ipsa at explicabo. Odit nemo provident unde nisi expedita, molestias quidem? Rerum, non. Maiores quis eius magnam autem expedita quisquam.
+            <Typography
+              variant="p"
+              sx={{ fontFamily: "var(--poppins-font)", wordSpacing: 4 }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores
+              iusto ipsa at explicabo. Odit nemo provident unde nisi expedita,
+              molestias quidem? Rerum, non. Maiores quis eius magnam autem
+              expedita quisquam.
             </Typography>
-            <Button variant="contained" sx={{ display: "block", borderRadius: 0, mt: 2 }} className="btnStyle">GET APPOINTMENT</Button>
+            <Button
+              variant="contained"
+              sx={{ display: "block", borderRadius: 0, mt: 4 }}
+              className="btnStyle"
+            >
+              GET APPOINTMENT
+            </Button>
           </Grid>
           <Grid item xs={6} md={6}>
             <img style={{ width: "100%" }} src={chair} alt="" />

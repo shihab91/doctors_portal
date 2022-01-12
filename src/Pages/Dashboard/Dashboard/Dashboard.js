@@ -9,17 +9,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
-import { NavLink } from "react-router-dom";
-// import DashboardHome from '../DashboardHome/DashboardHome';
-import { Outlet } from "react-router-dom";
-// import MakeAdmin from '../MakeAdmin/MakeAdmin';
-// import AddDoctor from '../AddDoctor/AddDoctor';
-import { MdOutlineCalendarToday } from "react-icons/md";
+import { Outlet, NavLink } from "react-router-dom";
+import { MdSupervisorAccount, MdOutlineCalendarToday } from "react-icons/md";
 import { CgMenuGridR } from "react-icons/cg";
-import { MdSupervisorAccount } from "react-icons/md";
 import { RiAdminLine } from "react-icons/ri";
 import useAuth from "../../../hooks/useAuth";
-// import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
 const drawerWidth = 240;
 

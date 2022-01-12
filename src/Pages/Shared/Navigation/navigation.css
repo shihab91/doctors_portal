@@ -1,0 +1,13 @@
+.navigation-bar {
+  background: inherit !important;
+  box-shadow: none !important;
+  color: #000 !important;
+  font-family: var(--poppins-font) !important;
+}
+.navigation-bar button {
+  color: #000;
+  text-transform: none !important;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: var(--poppins-font) !important;
+}

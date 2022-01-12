@@ -1,62 +1,75 @@
-import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import { NavLink } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth';
-import { Container } from '@mui/material';
+import React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import { NavLink } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+import { Container } from "@mui/material";
+import "./navigation.css";
 const Navigation = () => {
   const { user, logOutUser } = useAuth();
   const activeStyle = {
     color: "#8AFFCC",
-  }
+  };
   const style = {
     textDecoration: "none",
-    color: "white",
-    margin: ' 0 10px'
-
-  }
+    margin: " 0 10px",
+  };
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1, pt: 5 }}>
+      <AppBar position="static" className="navigation-bar">
         <Container>
-          <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
+          <Toolbar sx={{ px: 0 }}>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{
+                fontFamily: "var(--moo-lah-font)",
+                letterSpacing: 2,
+                fontWeight: "bold",
+                fontSize: 35,
+                cursor: "pointer",
+                mr: "auto",
+              }}
             >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Doctors Portal
+              <NavLink
+                style={{ textDecoration: "none", color: "#551a8b" }}
+                to="/"
+              >
+                Doctors Portal
+              </NavLink>
             </Typography>
             <NavLink style={style} to="/home" activeStyle={activeStyle}>
-              <Button color="inherit">home</Button>
+              <Button>Home</Button>
             </NavLink>
             <NavLink style={style} activeStyle={activeStyle} to="/appointment">
-              <Button color="inherit">Appointment</Button>
+              <Button>Appointment</Button>
             </NavLink>
-            {user?.email ?
+            {user?.email ? (
               <Box>
-                <NavLink style={style} activeStyle={activeStyle} to="/dashboard">
-                  <Button color="inherit">Dashboard</Button>
+                <NavLink
+                  style={style}
+                  activeStyle={activeStyle}
+                  to="/dashboard"
+                >
+                  <Button>Dashboard</Button>
                 </NavLink>
-                <Button color="inherit" style={style}>{user?.displayName}</Button>
-                <Button color="inherit" variant="contained" className="btnStyle" onClick={logOutUser}>Log Out</Button>
+                <Button style={style}>{user?.displayName}</Button>
+                <Button
+                  variant="contained"
+                  className="btnStyle"
+                  onClick={logOutUser}
+                >
+                  Log Out
+                </Button>
               </Box>
-              :
+            ) : (
               <NavLink style={style} activeStyle={activeStyle} to="/login">
-                <Button color="inherit">Log In</Button>
+                <Button>Log In</Button>
               </NavLink>
-            }
-
+            )}
           </Toolbar>
         </Container>
       </AppBar>

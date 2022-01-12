@@ -1,13 +1,27 @@
 /* poppins font from google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap');
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif !important;
+  padding: 0;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: "Poppins", sans-serif !important;
+:root {
+  --background: linear-gradient(
+    90deg,
+    rgb(0, 211, 176) 0%,
+    rgb(0, 205, 231) 61%
+  );
+  --color: #40c5c5;
+  --dashboard-bg: linear-gradient(
+    0deg,
+    rgba(0, 205, 231, 1) 0%,
+    rgba(0, 210, 175, 1) 80%
+  );
+  --poppins-font: "Poppins", sans-serif;
+  --montserrat-font: "Montserrat", sans-serif;
+  --moo-lah-font: 'Moo Lah Lah', cursive;
 }
