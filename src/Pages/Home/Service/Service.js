@@ -8,7 +8,6 @@ import "./service.css"
 const Service = (props) => {
   const { name, image, description } = props.service;
   return (
-
     <Grid item xs={4} sm={4} md={4} sx={{ gap: 4 }}>
       <Card className="service-card" sx={{ minWidth: 275, boxShadow: 0, m: 2 }}>
         <CardMedia
@@ -18,10 +17,23 @@ const Service = (props) => {
           alt="Paella dish"
         />
         <CardContent>
-          <Typography variant="h6" component="div" sx={{ my: 2, fontWeight: "regular" }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              my: 2,
+              fontWeight: 600,
+              fontSize: 21,
+              fontFamily: "var(--poppins-font)",
+            }}
+          >
             {name}
           </Typography>
-          <Typography variant="body2" color="text.secondary" >
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{ fontFamily: "var(--montserrat-font)", fontSize: 16 }}
+          >
             {description.slice(0, 150)}
           </Typography>
         </CardContent>

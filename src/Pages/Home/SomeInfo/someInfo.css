@@ -1,4 +1,4 @@
 .some-info-title{
     font-weight: 600;
-    font-family:var(--montserrat-font);
+    font-family:var(--montserrat-font) !important;
 }

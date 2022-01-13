@@ -12,24 +12,24 @@ const Services = () => {
     {
       name: "Fluoride Treatment",
       description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem officia illum velit, perspiciatis voluptatem molestias iste optio aliquam? Dolor magnam blanditiis quidem",
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem officia illum velit, perspiciatis ",
       image: fluoride,
     },
     {
       name: "Cavity Filling",
       description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem officia illum velit, perspiciatis voluptatem molestias iste optio aliquam? Dolor magnam blanditiis quidem",
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem officia illum velit, perspiciatis ",
       image: cavity,
     },
     {
       name: "Teeth Whitening",
       description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem officia illum velit, perspiciatis voluptatem molestias iste optio aliquam? Dolor magnam blanditiis quidem",
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem officia illum velit, perspiciatis ",
       image: whitening,
     },
   ];
   return (
-    <Box sx={{ flexGrow: 1, pt: 15 }}>
+    <Box sx={{ flexGrow: 1, pt: 15, pb: 10 }}>
       <Container>
         <Typography
           variant="h6"
@@ -41,7 +41,12 @@ const Services = () => {
         </Typography>
         <Typography
           variant="h4"
-          sx={{ fontWeight: "bold", mb: 1 }}
+          sx={{
+            fontSize: 45,
+            fontFamily: "var(--poppins-font)",
+            fontWeight: "bold",
+            mb: 5,
+          }}
           component="div"
         >
           Services we provide
