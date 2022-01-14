@@ -10,9 +10,6 @@ import { Container } from "@mui/material";
 import "./navigation.css";
 const Navigation = () => {
   const { user, logOutUser } = useAuth();
-  const activeStyle = {
-    color: "#8AFFCC",
-  };
   const style = {
     textDecoration: "none",
     margin: " 0 10px",
@@ -41,19 +38,15 @@ const Navigation = () => {
                 Doctors Portal
               </NavLink>
             </Typography>
-            <NavLink style={style} to="/home" activeStyle={activeStyle}>
+            <NavLink style={style} to="/home">
               <Button>Home</Button>
             </NavLink>
-            <NavLink style={style} activeStyle={activeStyle} to="/appointment">
+            <NavLink style={style} to="/appointment">
               <Button>Appointment</Button>
             </NavLink>
             {user?.email ? (
               <Box>
-                <NavLink
-                  style={style}
-                  activeStyle={activeStyle}
-                  to="/dashboard"
-                >
+                <NavLink style={style} to="/dashboard">
                   <Button>Dashboard</Button>
                 </NavLink>
                 <Button style={style}>{user?.displayName}</Button>
@@ -66,7 +59,7 @@ const Navigation = () => {
                 </Button>
               </Box>
             ) : (
-              <NavLink style={style} activeStyle={activeStyle} to="/login">
+              <NavLink style={style} to="/login">
                 <Button>Log In</Button>
               </NavLink>
             )}

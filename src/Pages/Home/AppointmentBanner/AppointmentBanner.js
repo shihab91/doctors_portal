@@ -18,7 +18,7 @@ const AppointmentBanner = () => {
           <Grid item xs={12} md={5}>
             <img
               src={doctor}
-              style={{ marginTop: "-135px", width: "100%" }}
+              style={{ marginTop: "-135px", width: "120%" }}
               alt=""
             />
           </Grid>
@@ -29,13 +29,25 @@ const AppointmentBanner = () => {
             >
               APPOINTMENT
             </Typography>
-            <Typography variant="h4" style={{ color: "white" }}>
-              Make an APPOINTMENT today
+            <Typography
+              variant="h4"
+              style={{
+                color: "white",
+                fontFamily: "var(--poppins-font)",
+                fontWeight: 600,
+              }}
+            >
+              Make An Appointment Today
             </Typography>
             <Typography
               variant="h6"
               sx={{ my: 3 }}
-              style={{ color: "white", fontSize: "16px", fontWeight: 300 }}
+              style={{
+                color: "white",
+                fontSize: 18,
+                fontWeight: 400,
+                fontFamily: "var(--poppins-font)",
+              }}
             >
               It is a long established fact aht a reader will be distractedly
               the readable content of a page when looking at its

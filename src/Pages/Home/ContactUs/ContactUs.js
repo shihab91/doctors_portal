@@ -14,14 +14,40 @@ const ContactUs = () => {
     width: "60%",
     outline: "none",
     marginTop: "25px",
-    borderRadius: "5px"
-  }
+    borderRadius: "5px",
+    fontFamily: "var(--montserrat-font)",
+  };
   return (
     <Box sx={{ flexGrow: 1 }} style={background}>
-      <Container sx={{ my: 8, pt: 10, pb: 7 }}  >
-        <Typography variant="h5" gutterBottom sx={{ color: "#40c5c5" }}> Contact Us</Typography>
-        <Typography variant="h3" gutterBottom sx={{ color: "#fff" }}>Always Connect With Us</Typography>
-        <form action="" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+      <Container sx={{ my: 8, pt: 12, pb: 15 }}>
+        <Typography
+          variant="h5"
+          gutterBottom
+          sx={{
+            color: "#40c5c5",
+            fontFamily: "var(--poppins-font)",
+            fontWeight: 600,
+          }}
+        >
+          {" "}
+          Contact Us
+        </Typography>
+        <Typography
+          variant="h3"
+          gutterBottom
+          sx={{ color: "#fff", fontFamily: "var(--poppins-font)" }}
+        >
+          Always Connect With Us
+        </Typography>
+        <form
+          action=""
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <TextField
             id="outlined-multiline-flexible"
             multiline
@@ -43,8 +69,12 @@ const ContactUs = () => {
             placeholder="Your Message*"
             style={contact}
           />
-          <Button className="btnStyle" sx={{ mt: 4, color: "white", px: 6, py: 1, fontSize: "16px" }}>Submit</Button>
-
+          <Button
+            className="btnStyle"
+            sx={{ mt: 4, color: "white", px: 6, py: 1, fontSize: "16px" }}
+          >
+            Submit
+          </Button>
         </form>
       </Container>
     </Box>

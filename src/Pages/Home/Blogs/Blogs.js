@@ -32,47 +32,85 @@ const Blogs = () => {
     },
   ];
   return (
-    <Container>
-      <Box sx={{ flexGrow: 1 }}>
-        <Typography variant="h6" color="var(--color)">Our Blogs</Typography>
-        <Typography variant="h3" >From Our Blog News</Typography>
+    <Container sx={{ my: 15 }}>
+      <Box sx={{ flexGrow: 1 }} className="blog-section">
+        <Typography
+          variant="h6"
+          color="var(--color)"
+          sx={{ fontFamily: "var(--poppins-font)" }}
+        >
+          Our Blogs
+        </Typography>
+        <Typography
+          variant="h3"
+          sx={{ fontFamily: "var(--poppins-font)", my: 4 }}
+        >
+          From Our Blog News
+        </Typography>
       </Box>
-      <Grid container spacing={3} sx={{ pl: 5, pt: 5 }} >
-        {blogs.map(blog => (
-          <Grid item xs={12} sm={6} md={4} key={blog.id} sx={{ textAlign: "left", gx: 4, pr: 3 }}>
+      <Grid container spacing={3} sx={{ pl: 5, pt: 5 }}>
+        {blogs.map((blog) => (
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            key={blog.id}
+            sx={{
+              textAlign: "left",
+              gx: 4,
+              pr: 3,
+              fontFamily: "var(--poppins-font)",
+            }}
+          >
             <Box>
               <Paper elevation={3} sx={{ p: 3 }}>
-                <Card sx={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  boxShadow: 0
-                }}>
+                <Card
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    boxShadow: 0,
+                  }}
+                >
                   <CardMedia
-                    image={blog.image
-                    }
+                    image={blog.image}
                     component="img"
                     style={{
-                      width: '17%'
+                      width: "17%",
                     }}
                     alt="doctor's image"
                   />
                   <CardContent sx={{ pl: 4 }}>
-                    <Typography variant="h6" color="textSecondary" component="p">
+                    <Typography
+                      variant="h6"
+                      color="textSecondary"
+                      component="p"
+                    >
                       {blog.doctor}
                     </Typography>
-                    <Typography variant="p" sx={{ fontSize: "14px" }} color="textSecondary" component="p">
+                    <Typography
+                      variant="p"
+                      sx={{ fontSize: "14px" }}
+                      color="textSecondary"
+                      component="p"
+                    >
                       {blog.date}
                     </Typography>
                   </CardContent>
                 </Card>
                 <Box>
-                  <Typography variant="h6" sx={{ my: 2 }}>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      my: 2,
+                      fontFamily: "var(--montserrat-font)",
+                      fontWeight: 600,
+                    }}
+                  >
                     {blog.title}
                   </Typography>
-                  <Typography variant="p">
-                    {blog.description}
-                  </Typography>
+                  <Typography variant="p">{blog.description}</Typography>
                 </Box>
               </Paper>
             </Box>

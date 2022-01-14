@@ -1,0 +1,9 @@
+.testimonial-card {
+  font-family: var(--poppins-font) !important;
+}
+.testimonial-card span {
+  color: rgba(0, 0, 0, 0.8);
+}
+.testimonial-card h6 {
+  font-family: var(--montserrat-font) !important;
+}

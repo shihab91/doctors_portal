@@ -48,7 +48,7 @@ const useFirebase = () => {
         updateProfile(auth.currentUser, {
           displayName: name,
         })
-          .then(() => { })
+          .then(() => {})
           .catch((error) => {
             setError(error.message);
           });
@@ -126,9 +126,13 @@ const useFirebase = () => {
   };
   // filter a user if he/she is a admin
   useEffect(() => {
+    setIsLoading(true);
     fetch(`https://aqueous-garden-06025.herokuapp.com/users/${user?.email}`)
       .then((res) => res.json())
-      .then((data) => setAdmin(data.admin));
+      .then((data) => {
+        setAdmin(data.admin);
+        setIsLoading(false);
+      });
   }, [user?.email]);
   return {
     user,
