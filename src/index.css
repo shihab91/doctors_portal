@@ -1,6 +1,6 @@
 /* poppins font from google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap");
 
 body {
   margin: 0;
@@ -23,11 +23,11 @@ body {
   );
   --poppins-font: "Poppins", sans-serif;
   --montserrat-font: "Montserrat", sans-serif;
-  --moo-lah-font: 'Moo Lah Lah', cursive;
+  --moo-lah-font: "Moo Lah Lah", cursive;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

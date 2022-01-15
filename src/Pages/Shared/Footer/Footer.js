@@ -11,7 +11,7 @@ const Footer = () => {
     fontFamily: "var(--poppins-font)",
   };
   return (
-    <Box sx={{ flexGrow: 1 }} style={FooterBg}>
+    <Box sx={{ flexGrow: 1, py: 5 }} style={FooterBg}>
       <Container>
         <Box sx={{ flexGrow: 1, mb: 2 }}>
           <Grid container spacing={0}>

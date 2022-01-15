@@ -10,19 +10,38 @@ const Booking = ({ booking, date, setBookingSuccess }) => {
     <>
       <Grid item xs={12} sm={6} md={4}>
         <Paper elevation={3} sx={{ py: 6 }}>
-          <Typography variant="h5" sx={{ color: "#40c5c5" }} gutterBottom>
+          <Typography
+            variant="h5"
+            sx={{ fontFamily: "var(--poppins-font)", color: "#40c5c5" }}
+            gutterBottom
+          >
             {name}
           </Typography>
-          <Typography variant="h6" gutterBottom>
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{ fontFamily: "var(--poppins-font)" }}
+          >
             {time}
           </Typography>
-          <Typography variant="caption" gutterBottom display="block">
+          <Typography
+            variant="caption"
+            gutterBottom
+            sx={{ fontFamily: "var(--poppins-font)" }}
+            display="block"
+          >
             Price ${price}
           </Typography>
           <Typography variant="caption" gutterBottom display="block">
             {space} SPACES AVAILABLE
           </Typography>
-          <Button variant="contained" onClick={handleBookingOpen} className="btnStyle">BOOK APPOINTMENTS</Button>
+          <Button
+            variant="contained"
+            onClick={handleBookingOpen}
+            className="btnStyle"
+          >
+            BOOK APPOINTMENTS
+          </Button>
         </Paper>
       </Grid>
       <BookingModal

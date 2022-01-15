@@ -1,0 +1,15 @@
+.css-195y93z-MuiButtonBase-root-MuiPickersDay-root.Mui-selected{
+    background: var(--background) !important;
+    border-radius:12px ;
+}
+.css-195y93z-MuiButtonBase-root-MuiPickersDay-root{
+    /* border: 1px solid  !important; */
+    border-radius:12px !important;
+}
+.css-bkrceb-MuiButtonBase-root-MuiPickersDay-root{
+    border-radius:12px !important;
+}
+.css-bkrceb-MuiButtonBase-root-MuiPickersDay-root.Mui-selected{
+    background: var(--background) !important;
+    border-radius:12px ;
+}

@@ -51,15 +51,31 @@ const AvailableAppointment = ({ date }) => {
 
   return (
     <Container sx={{ my: 20 }}>
-      <Typography variant="h4" sx={{ color: "#40c5c5", mb: 5 }}>Available Appointments on {date.toDateString()}</Typography>
-      {bookingSuccess && <Alert sx={{ my: 4 }} severity="success">Appointment Booked Successfully</Alert>}
+      <Typography
+        variant="h4"
+        sx={{
+          color: "#40c5c5",
+          mb: 5,
+          fontFamily: "var(--montserrat-font)",
+          fontWeight: 600,
+        }}
+      >
+        Available Appointments on {date.toDateString()}
+      </Typography>
+      {bookingSuccess && (
+        <Alert sx={{ my: 4 }} severity="success">
+          Appointment Booked Successfully
+        </Alert>
+      )}
       <Grid container spacing={2}>
-        {bookings.map(booking => <Booking
-          key={booking.id}
-          booking={booking}
-          date={date}
-          setBookingSuccess={setBookingSuccess}
-        ></Booking>)}
+        {bookings.map((booking) => (
+          <Booking
+            key={booking.id}
+            booking={booking}
+            date={date}
+            setBookingSuccess={setBookingSuccess}
+          ></Booking>
+        ))}
       </Grid>
     </Container>
   );
