@@ -1,9 +1,10 @@
-import React from 'react';
-import { Button, Container, Grid, Typography } from '@mui/material';
-import { Box } from '@mui/system';
-import footerBg from "../../../images/footer-bg.png"
-import "./Footer.css"
-import { GrFacebookOption, GrGooglePlus, GrTwitter } from "react-icons/gr";
+/* eslint-disable react/jsx-no-comment-textnodes */
+import React from "react";
+import { Button, Container, Grid, Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import footerBg from "../../../images/footer-bg.png";
+import "./Footer.css";
+import { GrFacebookOption, GrLinkedinOption, GrGithub } from "react-icons/gr";
 
 const Footer = () => {
   const FooterBg = {
@@ -66,9 +67,21 @@ const Footer = () => {
                   </Typography>
                   <li>New York -101020 Hudson Yards</li>
                   <div className="icons">
-                    <GrFacebookOption />
-                    <GrGooglePlus />
-                    <GrTwitter />
+                    <a
+                      href="https://www.facebook.com/mdshihab.shumon.3/"
+                      target="blank"
+                    >
+                      <GrFacebookOption />
+                    </a>
+                    <a
+                      href="http://www.linkedin.com/in/shihab-shumon/"
+                      target="blank"
+                    >
+                      <GrLinkedinOption />
+                    </a>
+                    <a href="https://github.com/shihab91/" target="blank">
+                      <GrGithub />
+                    </a>
                   </div>
                   <li>Call Now</li>
                   <a href="tel:01914608395">
