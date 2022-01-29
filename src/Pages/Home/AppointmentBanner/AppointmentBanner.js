@@ -18,11 +18,16 @@ const AppointmentBanner = () => {
           <Grid item xs={12} md={5}>
             <img
               src={doctor}
-              style={{ marginTop: "-135px", width: "120%" }}
+              style={{ marginTop: "-135px", width: "100%" }}
               alt=""
             />
           </Grid>
-          <Grid item xs={12} md={7} sx={{ textAlign: "left", my: "auto" }}>
+          <Grid
+            item
+            xs={12}
+            md={7}
+            sx={{ textAlign: "left", my: "auto", pb: 8 }}
+          >
             <Typography
               variant="h6"
               style={{ color: "#40c5c5", marginBottom: "15px" }}
