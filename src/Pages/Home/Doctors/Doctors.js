@@ -10,26 +10,26 @@ const Doctors = () => {
       .then((data) => setDoctors(data));
   }, []);
   return (
-    <div>
-      <Typography
-        variant="h5"
-        sx={{
-          fontFamily: "var(--poppins-font)",
-          fontWeight: 500,
-          color: "var(--color)",
-          mb: 4,
-        }}
-      >
-        Our Doctors
-      </Typography>
-      <Container>
+    <Container>
+      <div>
+        <Typography
+          variant="h4"
+          sx={{
+            fontFamily: "var(--poppins-font)",
+            fontWeight: 500,
+            color: "var(--color)",
+            mb: 8,
+          }}
+        >
+          Our Doctors
+        </Typography>
         <Grid container spacing={2}>
           {doctors.map((doctor) => (
             <Doctor doctor={doctor} key={doctor._id} />
           ))}
         </Grid>
-      </Container>
-    </div>
+      </div>
+    </Container>
   );
 };
 

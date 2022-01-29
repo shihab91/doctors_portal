@@ -13,7 +13,6 @@ const SomeInfo = () => {
     <Container sx={{ mt: -12 }}>
       <Grid
         container
-        spacing={{ xs: 2, md: 3 }}
         style={{ margin: 0 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}

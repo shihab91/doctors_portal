@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import chair from "../../../images/chair.png";
 import Grid from "@mui/material/Grid";
 import { Button, Container, Typography } from "@mui/material";
@@ -7,7 +7,7 @@ const Banner = () => {
   return (
     <Box
       sx={{
-        height: 700,
+        height: { xs: 600, md: 700 },
         pb: 10,
         display: "flex",
         alignItems: "center",
@@ -44,7 +44,12 @@ const Banner = () => {
               GET APPOINTMENT
             </Button>
           </Grid>
-          <Grid item xs={6} md={6}>
+          <Grid
+            item
+            xs={6}
+            md={6}
+            sx={{ display: { xs: "none", md: "initial" } }}
+          >
             <img style={{ width: "100%" }} src={chair} alt="" />
           </Grid>
         </Grid>

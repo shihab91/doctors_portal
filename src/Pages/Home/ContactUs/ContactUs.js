@@ -11,7 +11,7 @@ const ContactUs = () => {
   }
   const contact = {
     background: "white",
-    width: "60%",
+    // width: "60%",
     outline: "none",
     marginTop: "25px",
     borderRadius: "5px",
@@ -54,6 +54,7 @@ const ContactUs = () => {
             maxRows={1}
             placeholder="Email Address*"
             style={contact}
+            sx={{ width: { xs: "90%", md: "60%" } }}
           />
           <TextField
             id="outlined-multiline-flexible"
@@ -61,6 +62,7 @@ const ContactUs = () => {
             maxRows={1}
             placeholder="Subject*"
             style={contact}
+            sx={{ width: { xs: "90%", md: "60%" } }}
           />
           <TextField
             id="outlined-multiline-static"
@@ -68,6 +70,7 @@ const ContactUs = () => {
             rows={8}
             placeholder="Your Message*"
             style={contact}
+            sx={{ width: { xs: "90%", md: "60%" } }}
           />
           <Button
             className="btnStyle"

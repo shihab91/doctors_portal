@@ -48,7 +48,7 @@ const Blogs = () => {
           From Our Blog News
         </Typography>
       </Box>
-      <Grid container spacing={3} sx={{ pl: 5, pt: 5 }}>
+      <Grid container spacing={{ xs: 2, md: 3 }} sx={{ pt: 5, pr: 0 }}>
         {blogs.map((blog) => (
           <Grid
             item
@@ -58,8 +58,8 @@ const Blogs = () => {
             key={blog.id}
             sx={{
               textAlign: "left",
-              gx: 4,
-              pr: 3,
+              gx: { xs: 0.1, md: 4 },
+              pr: { xs: 0, md: 3 },
               fontFamily: "var(--poppins-font)",
             }}
           >

@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
+import { Container, Typography, Button, AppBar, Box } from "@mui/material";
 import useAuth from "../../../hooks/useAuth";
-import { Container, Toolbar } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./navigation.css";
